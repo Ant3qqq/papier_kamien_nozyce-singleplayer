@@ -69,9 +69,37 @@ header > h1{
     font-weight: bold;
 }
 
+.wybory{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
 
+.wybor{
+    display: inline-block;
+    border: 4px solid white;
+    border-radius: 50% ;
+    margin:0 20px;
+    transition: background 0.3s ease;
 
+}
 
+.wybor > img{
+    height: 110px;
+    padding: 10px;    
+}
+
+.wybor:hover{
+    cursor: pointer;
+    background: #1e1e1e;
+}
+
+#actionMessage{
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 30px;
+}
 
 
 
