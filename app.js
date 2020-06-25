@@ -18,6 +18,24 @@ function game(userChoice) {
     const computerChoice = getComputerChoice();
     console.log("computer choice =>"+computerChoice);
     console.log("user choice =>" + userChoice)
+    const name = "dupa";
+    switch(userChoice + computerChoice){
+        case "rs":
+        case "pr":
+        case "sp":
+            console.log("GRACZ WYGRYWA.");
+            break;
+        case "sr":
+        case "rp":
+        case "ps":
+            console.log("KOMPUTER WYGRYWA.");
+            break;
+        case "rr":
+        case "pp":
+        case "ss":
+            console.log("REMIS");
+            break;
+    }
 }
 
 function main(){
