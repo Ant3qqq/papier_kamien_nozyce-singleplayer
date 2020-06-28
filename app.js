@@ -35,10 +35,13 @@ function win(user, computer){
     if(user == "s"){
         result_p.innerHTML = (convertToWord(computer) + smallUser + " biją " + convertToWord(computer) + smallComp +" Wygrywasz!");
     } else {
-        result_p.innerHTML = (`${convertToWord(user)} ${smallUser} bije ${convertToWord(computer)} ${smallComp} Wygrywasz!`)
+        result_p.innerHTML = (`${convertToWord(user)} ${smallUser} bije ${convertToWord(computer)} ${smallComp} Wygrywasz!`);
     }
-    
+    document.getElementById(convertToWord(user).charAt(0).toLowerCase()).classList.add('greenGlow');
+    setTimeout(() =>  document.getElementById(convertToWord(user).charAt(0).toLowerCase()).classList.remove('greenGlow') , 300)
 }
+
+
 
 function lose(user, computer){
     computerScore++;
@@ -51,9 +54,8 @@ function lose(user, computer){
     } else {
         result_p.innerHTML = (`${convertToWord(computer)} ${smallComp} bije ${convertToWord(user)} ${smallUser} Przegrywasz :(`);
     }
-   
-
-
+    document.getElementById(convertToWord(user).charAt(0).toLowerCase()).classList.add('redGlow');
+    setTimeout(() =>  document.getElementById(convertToWord(user).charAt(0).toLowerCase()).classList.remove('redGlow') , 300);
 }
 
 function draw(user, computer){
@@ -65,7 +67,8 @@ function draw(user, computer){
     } else {
         result_p.innerHTML = (`${convertToWord(computer)} ${smallComp} równa się ${convertToWord(user)} ${smallUser} Remis`);
     }
-
+    document.getElementById(convertToWord(user).charAt(0).toLowerCase()).classList.add('greyGlow');
+    setTimeout(() => document.getElementById(convertToWord(user).charAt(0).toLowerCase()).classList.remove('greyGlow') , 300);
 }
 
 function game(userChoice) {
@@ -91,17 +94,11 @@ function game(userChoice) {
 
 function main(){
 
-    rock_div.addEventListener('click', function() {
-        game("r");
-    });
+    rock_div.addEventListener('click', () => game("r"));
 
-    paper_div.addEventListener('click', function() {
-        game("p");
-    });
+    paper_div.addEventListener('click',() => game("p"));
 
-    scissors_div.addEventListener('click', function() {
-        game("s");
-    });
+    scissors_div.addEventListener('click', () => game("s"));
 }
 
 main();
